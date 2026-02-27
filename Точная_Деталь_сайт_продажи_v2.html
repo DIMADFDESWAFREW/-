@@ -1,0 +1,1573 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Точная Деталь — 3D печать технических деталей под заказ в Санкт-Петербурге. Срочно, от 1 дня. B2B и частные заказы." />
+  <title>Точная Деталь — 3D печать деталей под заказ (СПб)</title>
+  <style>
+    :root{
+      --bg:#070b13;
+      --card:#0c1222;
+      --text:#e9eefc;
+      --muted:#a9b3cf;
+      --line:#1b2742;
+      --brand:#21b0ff;
+      --brand2:#8a5bff;
+      --ok:#35d07f;
+      --warn:#ffcc66;
+      --shadow: 0 18px 60px rgba(0,0,0,.35);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 10% 10%, rgba(33,176,255,.18), transparent 55%),
+        radial-gradient(900px 500px at 85% 15%, rgba(138,91,255,.18), transparent 55%),
+        radial-gradient(900px 500px at 50% 90%, rgba(53,208,127,.10), transparent 55%),
+        var(--bg);
+      line-height:1.35;
+    }
+    a{color:inherit}
+    .wrap{max-width:1120px;margin:0 auto;padding:22px}
+    header{
+      position:sticky;top:0;z-index:50;
+      background: rgba(7,11,19,.72);
+      backdrop-filter: blur(12px);
+      border-bottom:1px solid rgba(27,39,66,.6);
+    }
+    .headRow{display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;padding:12px 0;}
+   .logo{
+  display:flex;
+  align-items:center;
+}
+
+.logo img{
+  width:38px;
+  height:38px;
+  display:block;
+}
+    .logo:after{
+      content:"TD"; position:absolute; inset:0;
+      display:grid; place-items:center;
+      font-weight:900; letter-spacing:.5px;
+      color:#061022; text-shadow: 0 1px 0 rgba(255,255,255,.25);
+    }
+    .brand b{font-size:16px}
+    .brand small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+    nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+    nav a{
+      text-decoration:none;color:var(--muted);
+      padding:10px 10px;border-radius:10px;border:1px solid transparent;
+    }
+    nav a:hover{color:var(--text);border-color:rgba(27,39,66,.9);background:rgba(12,18,34,.55)}
+
+    .card{
+      background: rgba(12,18,34,.75);
+      border:1px solid rgba(27,39,66,.85);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero{
+      padding:34px 0 12px;
+      display:grid;
+      grid-template-columns: 1.12fr .88fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    .hero .left{padding:26px 26px 22px}
+    .kicker{
+      display:inline-flex;gap:10px;align-items:center;
+      color:var(--muted);font-size:13px;
+      border:1px solid rgba(27,39,66,.9);
+      background: rgba(7,11,19,.35);
+      padding:8px 12px;border-radius:999px;
+    }
+    .kicker .dot{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 4px rgba(53,208,127,.15)}
+    h1{margin:14px 0 10px;font-size:40px;letter-spacing:-.7px;line-height:1.05}
+    .sub{color:var(--muted);font-size:16px;max-width:62ch;margin:0}
+    .heroBullets{
+      margin-top:14px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:10px;
+    }
+    .chip{
+      padding:10px 12px;border-radius:14px;
+      border:1px solid rgba(27,39,66,.85);
+      background: rgba(7,11,19,.25);
+      color:var(--muted);
+      font-size:13px;
+      display:flex;gap:10px;align-items:flex-start;
+    }
+    .chip i{
+      width:20px;height:20px;border-radius:8px;
+      background: rgba(33,176,255,.16);
+      border:1px solid rgba(33,176,255,.25);
+      display:inline-grid;place-items:center;
+      color:var(--brand);
+      font-style:normal;font-weight:900;
+      flex:0 0 auto;
+      margin-top:1px;
+    }
+    .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:12px 14px;border-radius:14px;
+      text-decoration:none;
+      border:1px solid rgba(27,39,66,.85);
+      background: rgba(7,11,19,.35);
+      color:var(--text);
+      min-width: 190px;
+      cursor:pointer;
+    }
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(33,176,255,.95), rgba(138,91,255,.90));
+      border-color: transparent;
+      color:#071022;
+      font-weight:900;
+      box-shadow: 0 14px 40px rgba(33,176,255,.16);
+    }
+    .btn.tg{
+      background: rgba(33,176,255,.12);
+      border-color: rgba(33,176,255,.35);
+    }
+    .btn:hover{transform: translateY(-1px)}
+    .meta{margin-top:14px;display:flex;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:13px}
+    .pill{padding:8px 10px;border-radius:999px;border:1px solid rgba(27,39,66,.85);background: rgba(7,11,19,.25);}
+    .hero .right{padding:18px}
+    .specGrid{display:grid;gap:10px}
+    .spec{
+      padding:14px;border-radius:16px;
+      border:1px solid rgba(27,39,66,.85);
+      background: rgba(7,11,19,.25);
+    }
+    .spec b{display:block;margin-bottom:6px}
+    .spec small{color:var(--muted)}
+
+    section{padding:18px 0}
+    .sectionTitle{font-size:22px;margin:8px 0 10px}
+    .muted{color:var(--muted)}
+    .grid3{display:grid;grid-template-columns: repeat(3, 1fr);gap:14px}
+    .mini{padding:16px}
+    .mini b{display:block;margin-bottom:8px}
+    .mini p{margin:0;color:var(--muted);font-size:14px}
+
+    .two{display:grid;grid-template-columns: 1fr 1fr;gap:14px}
+    ul{margin:10px 0 0 18px;color:var(--muted)}
+    li{margin:6px 0}
+    .hr{height:1px;background:rgba(27,39,66,.75);margin:14px 0}
+
+    .painRow{display:grid;grid-template-columns: 1fr 1fr 1fr;gap:12px}
+    .pain{padding:16px}
+    .pain b{display:flex;align-items:center;gap:10px}
+    .tag{
+      display:inline-flex;align-items:center;gap:8px;
+      font-size:12px;color:var(--muted);
+      border:1px solid rgba(27,39,66,.85);
+      background: rgba(7,11,19,.22);
+      padding:6px 10px;border-radius:999px;
+      margin-top:10px;
+    }
+    .tag i{font-style:normal;color:var(--warn);font-weight:900}
+
+    .portfolioGrid{display:grid;grid-template-columns: repeat(3, 1fr);gap:14px}
+    .shot{padding:12px}
+    .ph{
+      height:170px;border-radius:16px;
+      background:
+        radial-gradient(600px 160px at 20% 20%, rgba(33,176,255,.18), transparent 55%),
+        radial-gradient(500px 180px at 80% 20%, rgba(138,91,255,.18), transparent 55%),
+        rgba(7,11,19,.25);
+      border:1px dashed rgba(169,179,207,.25);
+      display:grid;place-items:center;
+      color:rgba(169,179,207,.7);
+      font-weight:700;
+      text-align:center;
+      padding:12px;
+    }
+    .shot .cap{margin-top:10px;color:var(--muted);font-size:13px}
+    .cap b{color:var(--text);display:block;margin-bottom:4px;font-size:14px}
+
+    .priceGrid{display:grid;grid-template-columns: repeat(3, 1fr);gap:14px}
+    .price{padding:18px}
+    .badge{
+      display:inline-flex;align-items:center;gap:8px;
+      font-size:12px;color:var(--muted);
+      border:1px solid rgba(27,39,66,.85);
+      background: rgba(7,11,19,.22);
+      padding:6px 10px;border-radius:999px;
+    }
+    .price h3{margin:10px 0 6px}
+    .money{font-size:26px;font-weight:900;letter-spacing:-.5px}
+    .price .muted{font-size:13px}
+    .price .btn{min-width:0;width:100%;margin-top:12px}
+
+    .formula{padding:18px}
+    .formulaBox{
+      display:grid;gap:10px;
+      border:1px solid rgba(27,39,66,.85);
+      background: rgba(7,11,19,.22);
+      border-radius:16px;
+      padding:14px;
+      color:var(--muted);
+    }
+    .formulaBox code{
+      display:block;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      background: rgba(12,18,34,.55);
+      border:1px solid rgba(27,39,66,.85);
+      padding:10px 12px;border-radius:12px;
+      color:var(--text);
+      overflow:auto;
+    }
+
+    .contact{
+      padding:18px;
+      display:grid;grid-template-columns: 1fr 1fr;gap:14px;
+      align-items:start;
+    }
+    .form{display:grid;gap:10px}
+    input, textarea{
+      width:100%;
+      background: rgba(7,11,19,.28);
+      border:1px solid rgba(27,39,66,.85);
+      border-radius:14px;
+      padding:12px 12px;
+      color:var(--text);
+      outline:none;
+    }
+    textarea{min-height:120px;resize:vertical}
+    .hint{font-size:12px;color:var(--muted)}
+    footer{padding:22px 0 40px;color:var(--muted);font-size:12px}
+
+    .floatTg{
+      position:fixed;right:18px;bottom:18px;z-index:1000;
+      display:flex;gap:10px;align-items:center;
+      padding:12px 14px;border-radius:999px;text-decoration:none;
+      background: linear-gradient(135deg, rgba(33,176,255,.95), rgba(138,91,255,.90));
+      color:#071022;font-weight:900;
+      box-shadow: 0 16px 50px rgba(33,176,255,.20);
+      border:1px solid rgba(255,255,255,.12);
+    }
+    .floatTg span{
+      display:inline-grid;place-items:center;
+      width:34px;height:34px;border-radius:999px;
+      background: rgba(7,11,19,.18);
+      border:1px solid rgba(7,11,19,.18);
+      color:#071022;font-weight:900;
+    }
+    .floatTg small{font-weight:800}
+
+    @media (max-width: 980px){
+      .hero{grid-template-columns: 1fr}
+      .heroBullets{grid-template-columns: 1fr}
+      .grid3{grid-template-columns: 1fr}
+      .two{grid-template-columns: 1fr}
+      .painRow{grid-template-columns: 1fr}
+      .portfolioGrid{grid-template-columns: 1fr}
+      .priceGrid{grid-template-columns: 1fr}
+      .contact{grid-template-columns: 1fr}
+      h1{font-size:34px}
+      nav{display:none}
+    }
+.realimg {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.card.shot img {
+    transition: transform 0.4s ease;
+}
+
+.card.shot:hover img {
+    transform: scale(1.05);
+}
+/* ===== Modal калькулятор ===== */
+.modal{ position:fixed; inset:0; display:none; z-index:9999; }
+.modal.show{ display:block; }
+.modal__backdrop{ position:absolute; inset:0; background:rgba(0,0,0,.55); backdrop-filter: blur(6px); }
+.modal__box{
+  position:relative;
+  max-width:820px;
+  margin:6vh auto;
+  background:rgba(12,18,32,.92);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:18px;
+  padding:18px;
+  box-shadow: 0 20px 80px rgba(0,0,0,.55);
+}
+.modal__head{ display:flex; justify-content:space-between; align-items:flex-start; gap:14px; }
+.modal__kicker{ color:#9fb3c8; font-size:12px; }
+.modal__title{ margin:6px 0 0; font-size:22px; }
+.modal__close{
+  background:transparent; border:1px solid rgba(255,255,255,.12);
+  color:#fff; border-radius:12px; width:40px; height:40px; cursor:pointer;
+}
+.modal__grid{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap:12px;
+  margin-top:14px;
+}
+.f{ display:flex; flex-direction:column; gap:8px; }
+.f span{ color:#9fb3c8; font-size:12px; }
+.f select, .f input{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.10);
+  color:#fff;
+  border-radius:14px;
+  padding:12px 12px;
+  outline:none;
+}
+.modal__result{
+  margin-top:14px;
+  padding:14px;
+  border-radius:14px;
+  background:rgba(45,164,255,.08);
+  border:1px solid rgba(45,164,255,.18);
+  color:#d9ecff;
+}
+.modal__actions{ display:flex; flex-wrap:wrap; gap:10px; margin-top:12px; }
+.btn{ padding:12px 14px; border-radius:14px; cursor:pointer; border:0; font-weight:700; }
+.btnGhost{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.10);
+  color:#fff;
+}
+.btnPrimary{
+  background:linear-gradient(90deg,#2da4ff,#7b5cff);
+  color:#08101f;
+}
+.modal__note{ margin-top:10px; color:#9fb3c8; font-size:12px; }
+
+@media(max-width:860px){
+  .modal__grid{ grid-template-columns:1fr; }
+  .modal__box{ margin:4vh 12px; }
+}
+.b2bWrap{display:grid;grid-template-columns:1.2fr .9fr;gap:14px}
+.b2bBullets{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0 12px}
+.b2bPoint{background:rgba(7,11,19,.55);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:10px 12px}
+.b2bTags{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.tag{font-size:12px;padding:7px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.10);background:rgba(7,11,19,.35);color:var(--text)}
+.b2bCard{background:rgba(7,11,19,.35);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:16px}
+.b2bList{margin:10px 0 12px;padding-left:18px;color:var(--text)}
+.b2bList li{margin:6px 0;color:var(--muted)}
+.b2bMini{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+.miniLabel{display:block;font-size:12px;color:var(--muted);margin-bottom:2px}
+.b2bBtn{width:100%;text-align:center}
+
+@media (max-width: 980px){
+  .b2bWrap{grid-template-columns:1fr}
+  .b2bBullets{grid-template-columns:1fr}
+}
+.benefitsGrid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:12px;
+}
+.ben{padding:18px}
+.ben .ico{
+  width:42px;height:42px;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  border:1px solid rgba(255,255,255,.10);
+  background: rgba(7,11,19,.35);
+  margin-bottom:10px;
+  font-size:18px;
+}
+.ben b{display:block;margin-bottom:6px}
+
+@media (max-width: 980px){
+  .benefitsGrid{grid-template-columns:1fr}
+}
+.stepsCard{
+  padding:18px;
+}
+
+.stepsHead{ margin-bottom:12px; }
+.stepsTitle{
+  font-weight:900;
+  font-size:18px;
+  letter-spacing:.2px;
+}
+.stepsSub{
+  margin-top:6px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.stepsGrid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:10px;
+  margin-top:12px;
+}
+
+.stepItem{
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.02);
+  border-radius:16px;
+  padding:12px;
+}
+
+.stepTop{
+  display:flex;
+  align-items:baseline;
+  gap:10px;
+  margin-bottom:6px;
+}
+
+.stepNum{
+  font-weight:900;
+  font-size:16px;
+  color: rgba(33,176,255,.85);
+  min-width:40px;
+}
+
+.stepName{
+  font-weight:800;
+  font-size:14px;
+}
+
+.stepText{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.35;
+}
+
+.stepsNote{
+  margin-top:12px;
+  color:var(--muted);
+  font-size:12.5px;
+  border-top:1px solid var(--line);
+  padding-top:12px;
+}
+
+/* Чуть плотнее на широких экранах */
+@media (min-width: 980px){
+  .stepsGrid{
+    gap:12px;
+  }
+  .stepItem{ padding:14px; }
+}
+.standardsGrid{
+  display:grid;
+  grid-template-columns: repeat(2,1fr);
+  gap:14px;
+}
+
+.standard{
+  position:relative;
+  padding:18px 18px 18px 22px;
+  background: rgba(255,255,255,.02);
+  border:1px solid var(--line);
+  border-radius:16px;
+  transition: all .25s ease;
+}
+
+/* Вертикальная тех-линия */
+.standard::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  width:4px;
+  background: linear-gradient(180deg, #21b0ff, #8a5bff);
+  border-radius:16px 0 0 16px;
+  opacity:.85;
+}
+.standardsGrid{
+  display:grid;
+  grid-template-columns: repeat(2,1fr);
+  gap:14px;
+}
+
+.standard{
+  position:relative;
+  padding:18px 18px 18px 22px;
+  background: rgba(255,255,255,.02);
+  border:1px solid var(--line);
+  border-radius:16px;
+  transition: all .25s ease;
+}
+
+/* Вертикальная тех-линия */
+.standard::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  width:4px;
+  background: linear-gradient(180deg, #21b0ff, #4502ed);
+  border-radius:16px 0 0 16px;
+  opacity:.85;
+}
+/* ===== STRICT TECH STYLE ===== */
+
+.standardsHeader{
+  margin-bottom:16px;
+}
+
+.standardsLabel{
+  font-size:11px;
+  letter-spacing:2px;
+  color:var(--muted);
+  margin-bottom:6px;
+  opacity:.7;
+}
+
+.standardsGrid{
+  display:grid;
+  grid-template-columns: repeat(2,1fr);
+  gap:16px;
+}
+
+.standard{
+  background: transparent;
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:18px;
+  position:relative;
+}
+
+.stdCode{
+  font-size:11px;
+  letter-spacing:1.5px;
+  color:rgba(33,176,255,.7);
+  margin-bottom:6px;
+}
+
+.standard b{
+  display:block;
+  font-weight:900;
+  margin-bottom:8px;
+  font-size:14px;
+  letter-spacing:.3px;
+}
+
+.standard .muted{
+  font-size:13px;
+  line-height:1.5;
+}
+
+.standard:hover{
+  border-color:rgba(33,176,255,.4);
+}
+
+@media (max-width:980px){
+  .standardsGrid{
+    grid-template-columns:1fr;
+  }
+}.sectionTitle,
+h2 {
+  text-align: center;
+}
+.sectionTitle{
+  text-align:center;
+  font-weight:900;
+  font-size:26px;
+  letter-spacing:.5px;
+  margin-bottom:28px;
+  position:relative;
+}
+
+.sectionTitle::after{
+  content:"";
+  width:70px;
+  height:3px;
+  background: linear-gradient(90deg,#f6f7f8,#034482);
+  display:block;
+  margin:14px auto 0;
+  border-radius:3px;
+}
+/* Иконки в карточках преимуществ */
+.card .ic,
+.card .ico,
+.card .icon{
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: rgba(33,176,255,.12);
+  border: 1px solid rgba(33,176,255,.18);
+  box-shadow: 0 10px 30px rgba(33,176,255,.10);
+  flex: 0 0 auto;
+}
+
+/* если внутри emoji или символ */
+.card .ic span,
+.card .ico span,
+.card .icon span{
+  font-size: 20px;
+  line-height: 1;
+  filter: saturate(1.1);
+}
+.card .ic,
+.card .icon,
+.card .ico{
+  font-size: 26px;
+}
+/* badges */
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:7px 14px;
+  border-radius:999px;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:.2px;
+  backdrop-filter: blur(6px);
+  border:1px solid transparent;
+  white-space:nowrap;
+}
+
+/* 🟡 Янтарный */
+.badge--warn{
+  color:#e7c58a;
+  background: rgba(231,197,138,.12);
+  border-color: rgba(231,197,138,.35);
+}
+
+/* 🔴 Срочно */
+.badge--urgent{
+  color:#ff8b8b;
+  background: rgba(255,120,120,.12);
+  border-color: rgba(255,120,120,.35);
+}
+
+/* 🟢 Проверка */
+.badge--check{
+  color:#7ed8a7;
+  background: rgba(80,200,140,.12);
+  border-color: rgba(80,200,140,.35);
+}
+.badge--urgent{
+  box-shadow: 0 0 18px rgba(255,120,120,.15);
+}
+
+.badge--warn{
+  box-shadow: 0 0 18px rgba(231,197,138,.12);
+}
+
+.badge--check{
+  box-shadow: 0 0 18px rgba(80,200,140,.12);
+}
+.pain .painGrid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:14px;
+  align-items:stretch;
+}
+
+.pain .painCard{
+  position:relative; /* нужно для бейджей */
+}
+/* PAIN: ровная сетка */
+.painRow{
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  align-items: stretch;
+}
+
+.card.pain{
+  padding: 18px;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.painHead{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.painHead b{
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.card.pain .muted{
+  margin: 0;
+  line-height: 1.45;
+}
+.card.pain{
+  display:flex;
+  flex-direction:column;
+  align-items:center;   /* вот это центрирует по горизонтали */
+  text-align:center;    /* и текст тоже */
+}
+nav a{
+  padding:8px 16px;
+  border-radius:999px;
+  background:rgba(255,255,255,.05);
+  backdrop-filter:blur(6px);
+  transition:.3s;
+}
+
+nav a:hover{
+  background:rgba(120,140,255,.15);
+  box-shadow:0 0 12px rgba(120,140,255,.25);
+}
+.modal{
+  position:fixed;
+  inset:0;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:1000;
+}
+
+.modal.active{
+  display:flex;
+}
+
+.modal_overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  backdrop-filter:blur(6px);
+}
+
+.modal_box{
+  position:relative;
+  background:rgba(20,30,55,.9);
+  border:1px solid rgba(255,255,255,.08);
+  padding:32px;
+  border-radius:20px;
+  width:340px;
+  z-index:2;
+  box-shadow:0 20px 60px rgba(0,0,0,.6);
+  text-align:center;
+}
+
+.modal_close{
+  position:absolute;
+  top:12px;
+  right:14px;
+  background:none;
+  border:none;
+  color:#fff;
+  font-size:18px;
+  cursor:pointer;
+}
+
+.contact_list{
+  margin-top:20px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.contact_list a{
+  padding:10px;
+  border-radius:12px;
+  background:rgba(120,140,255,.12);
+  color:#fff;
+  text-decoration:none;
+  transition:.3s;
+}
+
+.contact_list a:hover{
+  background:rgba(120,140,255,.25);
+}
+.brand .logo img{
+  width: 40px;
+  height: 40px;
+  display: block;
+  object-fit: contain;
+}
+/* Две колонки остаются как были */
+.b2bGrid{
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+/* Левая колонка: делаем центрирование ВНУТРЕННЕГО контейнера */
+.b2bLeft{
+  padding: 14px;              /* общий воздух */
+  display: flex;
+  justify-content: center;    /* центрируем inner внутри левой части */
+}
+
+/* Вот он “красивый контейнер” */
+.b2bInner{
+  width: 100%;
+  max-width: 760px;           /* подгони: 640–820 обычно ок */
+}
+
+/* Чтобы текст не становился по центру */
+.b2bInner{
+  text-align: left;
+}
+
+/* Если заголовок хочешь оставить по центру (как сейчас) */
+.b2bInner h2{
+  text-align: center;
+}
+@media (max-width: 980px){
+
+  .hero .left,
+  .stepsCard{
+    padding:18px;
+  }
+
+  .hero h1{
+    font-size:28px;
+    line-height:1.15;
+  }
+
+  .hero .sub{
+    font-size:14px;
+  }
+}
+@media (max-width: 980px){
+  .b2bInner{
+    max-width:100%;
+  }
+
+  .b2bCard{
+    width:100%;
+  }
+}
+.tgForm{
+  display:grid;
+  gap:16px;
+  max-width:600px;
+  width:100%;
+}
+
+@media(max-width:980px){
+  .tgForm{
+    max-width:100%;
+  }
+}
+html, body{
+  overflow-x:hidden;
+}
+
+.wrap{
+  width:100%;
+  max-width:1120px;
+}
+
+.card{
+  max-width:100%;
+}
+@media(max-width:480px){
+
+  .sectionTitle{
+    font-size:20px;
+  }
+
+  .btn{
+    width:100%;
+  }
+
+  .heroBullets{
+    gap:8px;
+  }
+
+  .chip{
+    font-size:12px;
+  }
+
+  .floatTg{
+    right:12px;
+    bottom:12px;
+    padding:10px 12px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap headRow">
+      <a class="brand" href="#top" aria-label="Точная Деталь">
+        <a href="#" class="logo">
+          <img src="logo.svg" alt="Точная Деталь" width="40" height="40">
+</a>
+          <b>Точная Деталь</b>
+          <small>3D печать деталей • Санкт-Петербург</small>
+        </span>
+      </a>
+      <nav aria-label="Навигация">
+  <a href="#pain">Задачи</a>
+  <a href="#benefits">Преимущества</a>
+  <a href="#pricing" id="navPricing">Цены</a>
+  <a href="#b2b">B2B</a>
+  <a href="#" id="navContact">Контакты</a>
+</nav>
+    </div>
+  </header>
+
+  <main id="top" class="wrap">
+    <section class="hero">
+      <div class="card left">
+        <div class="kicker"><span class="dot"></span> Срочно • от 1 дня • без ожидания поставок</div>
+        <h1>3D печать технических деталей в СПб.<br/>Точно. Быстро. По делу.</h1>
+        <p class="sub">
+          Изготавливаю пластиковые детали, корпуса и крепления на профессиональном 3D‑оборудовании.
+          Работаю с частными заказами и бизнесом: автосервисы, мастерские, небольшие производства.
+        </p>
+
+        <div class="heroBullets">
+          <div class="chip"><i>✓</i>Ответ в течение дня, расчёт по модели/фото</div>
+          <div class="chip"><i>✓</i>Мелкие серии 10–50 шт. (и разовые детали)</div>
+          <div class="chip"><i>✓</i>Материалы под задачу: PETG / ABS / ASA</div>
+          <div class="chip"><i>✓</i>Контроль размеров и аккуратная постобработка</div>
+        </div>
+
+        <div class="ctaRow">
+          <a class="btn primary" href="javascript:void(0)" onclick="openCalc()">Калькулятор</a>
+          <a class="btn tg" id="heroTg" href="#contact">Написать в Telegram</a>
+        </div>
+
+        <div class="meta">
+          <span class="pill">Оборудование: Bambu Lab X1 Carbon</span>
+          <span class="pill">Сроки: 1–3 дня</span>
+          <span class="pill">B2B: постоянные условия</span>
+          <span class="pill">Частные заказы</span>
+          <span class="pill">Качество и гарантия</span>
+        </div>
+      </div>
+
+      <div class="card stepsCard">
+  <div class="stepsHead">
+    <div class="stepsTitle">Всего 5 шагов до результата</div>
+    <div class="stepsSub">Коротко, прозрачно, без лишней бюрократии.</div>
+  </div>
+
+  <div class="stepsGrid">
+    <div class="stepItem">
+      <div class="stepTop">
+        <div class="stepNum">1</div>
+        <div class="stepName">Заявка</div>
+      </div>
+      <div class="stepText">Пишете в Telegram и прикладываете фото/модель, размеры и количество.</div>
+    </div>
+
+    <div class="stepItem">
+      <div class="stepTop">
+        <div class="stepNum">2</div>
+        <div class="stepName">Уточнение и расчёт</div>
+      </div>
+      <div class="stepText">Быстро уточняю материал, условия эксплуатации и сроки. Даю расчёт.</div>
+    </div>
+
+    <div class="stepItem">
+      <div class="stepTop">
+        <div class="stepNum">3</div>
+        <div class="stepName">Подготовка модели</div>
+      </div>
+      <div class="stepText">Проверка/адаптация под печать: стенки, допуски, ориентация, поддержка.</div>
+    </div>
+
+    <div class="stepItem">
+      <div class="stepTop">
+        <div class="stepNum">4</div>
+        <div class="stepName">Печать и контроль</div>
+      </div>
+      <div class="stepText">Печать на Bambu Lab + контроль размеров и качества. При необходимости постобработка.</div>
+    </div>
+
+    <div class="stepItem">
+      <div class="stepTop">
+        <div class="stepNum">5</div>
+        <div class="stepName">Выдача</div>
+      </div>
+      <div class="stepText">Передача/доставка. Для B2B: фиксация параметров, чтобы повторять партии.</div>
+    </div>
+  </div>
+
+  </div>
+</div>
+    </section>
+
+    <section id="pain" class="pain">
+      <h2 class="sectionTitle">Когда 3D печать решает задачу быстрее всего</h2>
+      <div class="painRow">
+        <div class="card pain">
+  <div class="painHead">
+    <span class="badge badge--warn"><span class="badge__dot"></span>Снято с производства</span>
+  </div>
+  <p class="muted">Печатаем замену по образцу, фото или чертежу. Быстрее, чем искать поставщика</p>
+</div>
+        <div class="card pain">
+  <div class="painHead">
+    <span class="badge badge--urgent"><span class="badge__dot"></span>Срочно</span>
+  </div>
+  <p class="muted">Изготовление под заказ за 1–3 дня (в зависимости от размера и материала)</p>
+</div>
+<div class="card pain">
+  <div class="painHead">
+    <span class="badge badge--check"><span class="badge__dot"></span>Проверка посадки</span>
+  </div>
+  <p class="muted">Пробная деталь → корректировка → мелкая серия. Экономит деньги и время</p>
+</div>
+    </section>
+
+ <section id="benefits">
+  <h2 class="sectionTitle">Преимущества</h2>
+
+  <div class="benefitsGrid" style="margin-top:12px">
+    <div class="card ben">
+      <div class="ico">🔄</div>
+      <b>Полный цикл</b>
+      <div class="muted">От идеи/образца до печати и аккуратной выдачи.</div>
+    </div>
+
+    <div class="card ben">
+      <div class="ico">🧠</div>
+      <b>Проверка модели</b>
+      <div class="muted">Перед запуском выявляю слабые места и предлагаю усиление.</div>
+    </div>
+
+    <div class="card ben">
+      <div class="ico">🛡️</div>
+      <b>Качество и контроль</b>
+      <div class="muted">Размеры, посадки, повторяемость. Без “сюрпризов”.</div>
+    </div>
+
+    <div class="card ben">
+      <div class="ico">⚡</div>
+      <b>Скорость</b>
+      <div class="muted">Обычно 1–3 дня. Говорим срок сразу, общение честное и прозрачное.</div>
+    </div>
+
+    <div class="card ben">
+      <div class="ico">🎯</div>
+      <b>Материал под задачу</b>
+      <div class="muted">PETG / ABS / ASA под нагрузку, температуру и улицу.</div>
+    </div>
+
+    <div class="card ben">
+      <div class="ico">📦</div>
+      <b>Постобработка</b>
+      <div class="muted">Подгонка, зачистка, упаковка по необходимости.</div>
+    </div>
+  </div>
+<section id="standards">
+  <div class="standardsHeader">
+    <h2 class="sectionTitle">Стандарты работы</h2>
+  </div>
+
+  <div class="standardsGrid">
+
+    <div class="standard">
+      <div class="stdCode"></div>
+      <b>Контроль размеров</b>
+      <div class="muted">
+        Проверка ключевых параметров измерительным инструментом.
+        Корректировка перед серией при необходимости.
+      </div>
+    </div>
+
+    <div class="standard">
+      <div class="stdCode"></div>
+      <b>Подбор материала</b>
+      <div class="muted">
+        PETG / ABS / ASA в зависимости от нагрузки,
+        температуры и условий эксплуатации.
+      </div>
+    </div>
+
+    <div class="standard">
+      <div class="stdCode"></div>
+      <b>Повторяемость партий</b>
+      <div class="muted">
+        Фиксация параметров печати для стабильного
+        воспроизведения изделий.
+      </div>
+    </div>
+
+    <div class="standard">
+      <div class="stdCode"></div>
+      <b>Проверка модели</b>
+      <div class="muted">
+        Анализ стенок, допусков, ориентации,
+        оптимизация под технологию FDM.
+      </div>
+    </div>
+
+    <div class="standard">
+      <div class="stdCode"></div>
+      <b>Постобработка</b>
+      <div class="muted">
+        Зачистка, подгонка, контроль внешнего вида
+        перед выдачей клиенту.
+      </div>
+    </div>
+
+    <div class="standard">
+      <div class="stdCode"></div>
+      <b>Честная оценка задачи</b>
+      <div class="muted">
+        Если технология не подходит —
+        предлагается альтернативное решение.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    <section id="portfolio">
+      <h2 class="sectionTitle">Примеры работ</h2>
+      <p class="muted"></p>
+      <div class="portfolioGrid" style="margin-top:12px">
+        <div class="card shot">
+  <img src="images/detal1.jpg" alt="Крепление PETG" class="realimg">
+  <div class="cap">
+    <b>PETG • 120×40×25 мм</b>
+    Срок: 1 день • Для: автосервис
+  </div>
+</div>
+ <div class="card shot">
+  <img src="images/detal2.jpg" alt="Крепление PETG" class="realimg">
+  <div class="cap">
+    <b>ABS • 90×60×35 мм</b>
+    Срок: 1 день • Постобработка
+  </div>
+</div>
+ <div class="card shot">
+  <img src="images/detal3.jpg" alt="Крепление PETG" class="realimg">
+  <div class="cap">
+    <b>ASA • уличные условия</b>
+    Срок: 1 день • Повторяемый заказ
+  </div>
+</div>
+ <div class="card shot">
+  <img src="images/detal4.jpg" alt="Крепление PETG" class="realimg">
+  <div class="cap">
+    <b>PETG • серия</b>
+    Срок: 3 дня • B2B
+  </div>
+</div>
+ <div class="card shot">
+  <img src="images/detal5.jpg" alt="Крепление PETG" class="realimg">
+  <div class="cap">
+    <b>Качество поверхности</b>
+    Контроль размеров • аккуратность
+  </div>
+</div>
+ <div class="card shot">
+  <img src="images/detal6.jpg" alt="Крепление PETG" class="realimg">
+  <div class="cap">
+    <b>Тестовая деталь</b>
+    Проверка посадки → серия
+  </div>
+</div>
+      </div>
+    </section>
+<section id="tgform" class="wrap" style="margin-top:60px;">
+    <h2 class="sectionTitle">Быстрый расчет в Telegram</h2>
+    <p class="muted">Заполните 3 поля — сообщение сформируется автоматически.</p>
+
+    <div class="tgForm"> gap:16px; max-width:600px; margin-top:20px;">
+        <input id="detail" placeholder="Что за деталь? (например: крепление)" 
+               style="padding:14px; border-radius:10px; border:1px solid #1f2a44; background:#0f172a; color:white;">
+
+        <input id="size" placeholder="Размеры (например: 120x40x25 мм)" 
+               style="padding:14px; border-radius:10px; border:1px solid #1f2a44; background:#0f172a; color:white;">
+
+        <input id="qty" placeholder="Количество (например: 3 шт.)" 
+               style="padding:14px; border-radius:10px; border:1px solid #1f2a44; background:#0f172a; color:white;">
+
+        <button onclick="sendToTG()" 
+                style="padding:14px; border-radius:12px; border:none; font-weight:600; cursor:pointer; background:linear-gradient(90deg,#3b82f6,#8b5cf6); color:white;">
+            Получить расчет
+        </button>
+    </div>
+</section>
+
+ <section id="b2b">
+  <div class="card b2bLeft">
+    <div class="b2bInner">
+      <div class="kicker"><span class="dot"></span>B2B производство</div>
+      <h2 class="sectionTitle" style="margin:8px 0 8px">Детали и малые партии для бизнеса в СПб</h2>
+      <p class="muted" style="margin:0 0 14px">
+        Быстро закрываю задачи: крепления, корпуса, заглушки, переходники, нестандартные элементы.
+        Без ожидания поставок, с контролем размеров и аккуратной постобработкой.
+      </p>
+
+      <div class="b2bBullets">
+        <div class="b2bPoint"><b>Сроки:</b> обычно 1–3 дня</div>
+        <div class="b2bPoint"><b>Партии:</b> 10–50 шт. и разовые детали</div>
+        <div class="b2bPoint"><b>Материалы:</b> PETG / ABS / ASA</div>
+        <div class="b2bPoint"><b>Контроль:</b> размеры, посадки, повторяемость</div>
+      </div>
+
+      <div class="b2bTags">
+        <span class="tag">Автосервис</span>
+        <span class="tag">Мастерская</span>
+        <span class="tag">Электроника</span>
+        <span class="tag">Ремонт техники</span>
+        <span class="tag">Производство</span>
+        <span class="tag">строительство</span>
+      </div>
+    </div>
+
+    <div class="b2bRight">
+      <div class="b2bCard">
+        <b>Что нужно от вас</b>
+        <ul class="b2bList">
+          <li>Файл STL/STEP/OBJ или фото/чертёж</li>
+          <li>Размеры (мм) + количество</li>
+          <li>Условия: нагрузка/температура/улица</li>
+          <li>Желаемый срок</li>
+        </ul>
+
+        <div class="b2bMini">
+          <div><span class="miniLabel">Ответ</span><b>в течение дня</b></div>
+          <div><span class="miniLabel">Формат</span><b>расчёт + сроки</b></div>
+        </div>
+
+        <a class="btn primary b2bBtn" id="b2bTg" href="#contact">Обсудить заказ в Telegram</a>
+        <div class="hint" style="margin-top:10px">
+          Если задача не подходит под 3D-печать, скажу сразу и предложу вариант.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+    <footer>
+      <div class="hr"></div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:space-between;align-items:center">
+        <span>© <span id="y"></span> Точная Деталь</span>
+        <span class="muted">* Не выполняю заказы, нарушающие законодательство РФ.</span>
+      </div>
+    </footer>
+  </main>
+
+  <a class="floatTg" id="floatTg" href="#contact" aria-label="Написать в Telegram">
+    <span>📩</span> <small>Написать в Telegram</small>
+  </a>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // === НАСТРОЙКИ ===
+    const TELEGRAM_LINK = "https://t.me/ExactDetailsBot";
+    const EMAIL_TO = "exactdetails78@mail.ru";
+
+    ["heroTg","b2bTg","floatTg"].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.setAttribute("href", TELEGRAM_LINK);
+    });
+
+    function sendOrder(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const contact = document.getElementById('contactf').value.trim();
+      const qty = document.getElementById('qty').value.trim();
+      const details = document.getElementById('details').value.trim();
+
+      const subject = encodeURIComponent("Заявка на 3D печать — Точная Деталь");
+      const body = encodeURIComponent(
+        "Имя: " + name + "\n" +
+        "Контакты: " + contact + "\n" +
+        "Количество: " + (qty || "не указано") + "\n\n" +
+        "Описание заказа:\n" + details + "\n\n" +
+        "Файлы: прикрепите в ответном письме или пришлите ссылку"
+      );
+      window.location.href = "mailto:" + EMAIL_TO + "?subject=" + subject + "&body=" + body;
+      return false;
+    }
+  </script>
+  <script>
+function sendToTG() {
+    const detail = document.getElementById("detail").value.trim();
+    const size   = document.getElementById("size").value.trim();
+    const qty    = document.getElementById("qty").value.trim();
+
+    const message =
+        "Здравствуйте! Нужен расчет 3D-печати.\n\n" +
+        "Деталь: " + (detail || "-") + "\n" +
+        "Размеры: " + (size || "-") + "\n" +
+        "Количество: " + (qty || "-") + "\n\n" +
+        "Могу приложить фото/модель при необходимости.";
+
+    const url = "https://t.me/ExactDetailsBot" + encodeURIComponent(message);
+    window.open(url, "_blank");
+}
+</script>
+<!-- ====== PRICE CALC MODAL ====== -->
+<div class="modal" id="calcModal" aria-hidden="true">
+  <div class="modal__backdrop" onclick="closeCalc()"></div>
+
+  <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="calcTitle">
+    <div class="modal__head">
+      <div>
+        <div class="modal__kicker">Предварительная оценка</div>
+        <h3 id="calcTitle" class="modal__title">Калькулятор стоимости</h3>
+      </div>
+      <button class="modal__close" onclick="closeCalc()" aria-label="Закрыть">✕</button>
+    </div>
+
+    <div class="modal__grid">
+      <label class="f">
+        <span>Материал</span>
+        <select id="c_mat">
+          <option value="PETG">PETG (универсальный)</option>
+          <option value="ABS">ABS (прочный, термостойкий)</option>
+          <option value="ASA">ASA (для улицы)</option>
+        </select>
+      </label>
+
+      <label class="f">
+        <span>Размер детали</span>
+        <select id="c_size">
+          <option value="S">Маленькая (до 80 мм)</option>
+          <option value="M" selected>Средняя (80–150 мм)</option>
+          <option value="L">Крупная (150–250 мм)</option>
+        </select>
+      </label>
+
+      <label class="f">
+        <span>Заполнение</span>
+        <select id="c_infill">
+          <option value="15">15% (легкая)</option>
+          <option value="25" selected>25% (стандарт)</option>
+          <option value="40">40% (прочная)</option>
+        </select>
+      </label>
+
+      <label class="f">
+        <span>Качество</span>
+        <select id="c_quality">
+          <option value="draft">Черновое (быстрее)</option>
+          <option value="std" selected>Стандарт</option>
+          <option value="fine">Точное (аккуратно)</option>
+        </select>
+      </label>
+
+      <label class="f">
+        <span>Количество</span>
+        <input id="c_qty" type="number" min="1" value="1" />
+      </label>
+
+      <label class="f">
+        <span>Срочно?</span>
+        <select id="c_urgent">
+          <option value="no" selected>Нет</option>
+          <option value="yes">Да (приоритет)</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="modal__result" id="calcResult">
+      Заполните параметры и нажмите «Показать оценку».
+    </div>
+
+    <div class="modal__actions">
+      <button class="btn btnGhost" onclick="closeCalc()">Отмена</button>
+      <button class="btn btnPrimary" onclick="calcPrice()">Показать оценку</button>
+      <button class="btn btnPrimary" id="sendToTgBtn" onclick="sendCalcToTG()" style="display:none;">
+        Отправить в Telegram
+      </button>
+    </div>
+
+    <div class="modal__note">
+      * Это ориентир. Финальная цена зависит от модели, времени печати и постобработки.
+    </div>
+  </div>
+</div>
+<script>
+let lastCalcText = "";
+
+function openCalc(){
+  const m = document.getElementById("calcModal");
+  m.classList.add("show");
+  m.setAttribute("aria-hidden","false");
+}
+function closeCalc(){
+  const m = document.getElementById("calcModal");
+  m.classList.remove("show");
+  m.setAttribute("aria-hidden","true");
+}
+
+function calcPrice(){
+  const mat = document.getElementById("c_mat").value;
+  const size = document.getElementById("c_size").value;
+  const infill = parseInt(document.getElementById("c_infill").value,10);
+  const q = document.getElementById("c_quality").value;
+  const qty = Math.max(1, parseInt(document.getElementById("c_qty").value || "1",10));
+  const urgent = document.getElementById("c_urgent").value;
+
+  // Базовые ориентиры (можно потом подправить под твои цены)
+  let base = 800;
+if (size === 'S') base = 400;
+if (size === 'M') base = 750;
+if (size === 'L') base = 1100;
+
+  // Материал
+  if(mat==="ABS") base *= 1.15;
+  if(mat==="ASA") base *= 1.20;
+
+  // Заполнение
+  base *= (infill<=15) ? 0.92 : (infill<=25) ? 1.00 : 1.18;
+
+  // Качество
+  if(q==="draft") base *= 0.92;
+  if(q==="fine")  base *= 1.18;
+
+  // Количество (скидка на серию)
+  let total = base * qty;
+  if(qty>=5)  total *= 0.93;
+  if(qty>=10) total *= 0.88;
+
+  // Срочно
+  if(urgent==="yes") total *= 1.15;
+
+  // Вилка +/- 12%
+  const min = Math.round(total * 0.88 / 10) * 10;
+  const max = Math.round(total * 1.12 / 10) * 10;
+
+  const txt =
+`Оценка: примерно ${min.toLocaleString("ru-RU")}–${max.toLocaleString("ru-RU")} ₽
+Материал: ${mat}, размер: ${size}, заполнение: ${infill}%, качество: ${q}, кол-во: ${qty}${urgent==="yes" ? ", срочно" : ""}`;
+
+  lastCalcText = txt;
+
+  document.getElementById("calcResult").innerText = txt;
+  document.getElementById("sendToTgBtn").style.display = "inline-block";
+}
+
+function sendCalcToTG(){
+  const message =
+`Здравствуйте! Хочу расчёт 3D-печати.\n\n${lastCalcText}\n\nМогу приложить STL/фото/чертёж.`;
+  const url = "https://t.me/ExactDetailsBot?text=" + encodeURIComponent(message);
+  window.open(url, "_blank");
+}
+</script>
+<div class="modal" id="priceModal" aria-hidden="true">
+  <div class="modalBack" data-close="1"></div>
+
+  <div class="modalBox" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modalHead">
+      <div>
+        <div class="modalLabel">ПРЕДВАРИТЕЛЬНЫЙ РАСЧЁТ</div>
+        <div class="modalTitle" id="modalTitle">Калькулятор стоимости</div>
+      </div>
+      <button class="modalClose" id="closeModal" aria-label="Закрыть">✕</button>
+    </div>
+
+    <div class="modalGrid">
+      <label class="f">
+        <span>Материал</span>
+        <select id="calcMaterial">
+          <option value="PETG">PETG</option>
+          <option value="ABS">ABS</option>
+          <option value="ASA">ASA</option>
+        </select>
+      </label>
+
+      <label class="f">
+        <span>Вес пластика, г</span>
+        <input id="calcGrams" type="number" min="1" value="50" placeholder="например 50">
+      </label>
+
+      <label class="f">
+        <span>Сложность</span>
+        <select id="calcComplex">
+          <option value="1">Обычная</option>
+          <option value="1.25">Средняя</option>
+          <option value="1.5">Высокая</option>
+        </select>
+      </label>
+
+      <label class="f">
+        <span>Количество, шт</span>
+        <input id="calcQty" type="number" min="1" value="1">
+      </label>
+    </div>
+
+    <div class="modalResult">
+      <div class="resLeft">
+        <div class="resTitle">Предварительно</div>
+        <div class="resNote">Точная цена после модели/размеров/допусков.</div>
+      </div>
+      <div class="resPrice" id="calcOut">— ₽</div>
+    </div>
+
+    <div class="modalActions">
+      <button class="btn tg" id="sendToTgFromCalc">Отправить расчёт в Telegram</button>
+      <button class="btn" id="justClose">Закрыть</button>
+    </div>
+
+    <div class="modalHint">
+      Формула простая: материал (₽/г) + время/сложность + минималка. Можно поменять под твою экономику.
+    </div>
+  </div>
+</div>
+<script>
+  // Цены = открыть калькулятор
+  const navPricing = document.getElementById('navPricing');
+  if (navPricing) {
+    navPricing.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (typeof openCalc === 'function') openCalc(); // твоя модалка калькулятора
+      else location.hash = '#pricing'; // запасной вариант
+    });
+  }
+</script>
+<div class="modal" id="contactModal">
+  <div class="modal_overlay"></div>
+
+  <div class="modal_box">
+    <button class="modal_close" id="closeContact">✕</button>
+
+    <h3>Связаться с нами</h3>
+
+    <div class="contact_list">
+      <a href="https://t.me/ExactDetailsBot" target="_blank">Telegram</a>
+      <a href="mailto:exactdetails78@mail.ru">exactdetails78@mail.ru</a>
+      <a href="tel:89117782010">+7 911 778 20 10</a>
+    </div>
+  </div>
+</div>
+<script>
+  const navContact = document.getElementById('navContact');
+  const contactModal = document.getElementById('contactModal');
+  const closeContact = document.getElementById('closeContact');
+
+  navContact.addEventListener('click', (e) => {
+    e.preventDefault();
+    contactModal.classList.add('active');
+  });
+
+  closeContact.addEventListener('click', () => {
+    contactModal.classList.remove('active');
+  });
+
+  contactModal.addEventListener('click', (e) => {
+    if (e.target.classList.contains('modal_overlay')) {
+      contactModal.classList.remove('active');
+    }
+  });
+</script>
+</body>
+</html>
