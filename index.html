@@ -1377,7 +1377,7 @@ function sendToTG() {
         "Количество: " + (qty || "-") + "\n\n" +
         "Могу приложить фото/модель при необходимости.";
 
-    const url = "https://t.me/ExactDetailsBot" + encodeURIComponent(message);
+    const url = "https://t.me/ExactDetailsBot?text=" + encodeURIComponent(message);
     window.open(url, "_blank");
 }
 </script>
@@ -1488,7 +1488,7 @@ function calcPrice(){
   let base = 800;
 if (size === 'S') base = 200;
 if (size === 'M') base = 350;
-if (size === 'L') base = 550;
+if (size === 'L') base = 500;
 
   // Материал
   if(mat==="ABS") base *= 1.15;
